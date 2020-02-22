@@ -5,3 +5,9 @@
 @import 'base/brand';
 @import 'base/structure';
 @import 'base/typography';
+
+// Partials
+@import 'views/_header';
+
+// Views
+@import 'views/home/home';
