@@ -3,10 +3,11 @@
 	display: flex;
 	align-items: center;
 	justify-content: flex-start;
+	pointer-events: none;
 	position: fixed;
 	top: 0;
 	left: 27px;
-	pointer-events: none;
+	z-index: 100;
 
 	ul.list-nav {
 		margin: 0;

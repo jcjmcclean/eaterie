@@ -16,7 +16,8 @@
 			margin-bottom: 25px;
 			flex-grow: 0;
 			flex-shrink: 0;
-			background: grey;
+
+			// TODO - floaty background images
 
 			&.intro {
 				padding: 0 9px 87px;
@@ -82,14 +83,19 @@
 			}
 
 			&.post {
-				padding: 39px 30px 13.8px;
+				padding: 39px 30px 13.8px 29px;
+				display: flex;
+				justify-content: space-between;
+				flex-direction: column;
 				background: #ffffff;
 				box-shadow: 0px 15px 50px #0000000f;
 
 				h4 {
 					margin-bottom: 16px;
 					text-align: left;
-					font: Bold 22px/52px DIN Condensed;
+					font-size: 22px;
+					font-weight: bold;
+					line-height: 1;
 					letter-spacing: 0.44px;
 					color: #333333;
 				}
@@ -97,7 +103,8 @@
 				p {
 					margin-bottom: 22px;
 					text-align: left;
-					font: Regular 15px/20px Gill Sans;
+					font-size: 15px;
+					line-height: 20px;
 					letter-spacing: 0.15px;
 					color: #333333;
 					opacity: 1;
@@ -112,8 +119,10 @@
 					justify-content: flex-end;
 
 					li.item-meta {
-						margin: 0;
+						margin: 0 0 0 14px;
 						padding: 0;
+						display: flex;
+						align-items: center;
 
 						.icon-heart,
 						.icon-comment {
@@ -130,6 +139,15 @@
 						}
 					}
 				}
+			}
+
+			&.note {
+				min-height: auto;
+				align-self: center;
+				padding-right: 58px;
+				font-size: 15px;
+				letter-spacing: 0.15px;
+				color: #333333;
 			}
 		}
 	}

@@ -1,37 +1,128 @@
 (function() {
 	'use strict';
 
-	var section = document.querySelectorAll('section');
-	var sections = {};
-	var i = 0;
+	// Call scrollSpy on load to set section nav active
+	scrollSpy();
+	// Initialise google map
+	mapInit();
 
+	// On scroll event
+	window.onscroll = function() {
+		// Run scrollSpy
+		scrollSpy();
+	};
+})();
+
+/** Updates section nav active state based on section in viewport */
+function scrollSpy() {
+	// Get all sections from document
+	const section = document.querySelectorAll('section');
+	// Create a store for section ids and offsets
+	let sections = {};
+
+	// Loop through each section
 	Array.prototype.forEach.call(section, function(e) {
+		// Add to store with section id and pixel offset from top
 		sections[e.id] = e.offsetTop;
 	});
 
-	scrollSpy();
+	// Get current scroll position
+	const scrollPosition =
+		document.documentElement.scrollTop || document.body.scrollTop;
 
-	window.onscroll = function() {
-		scrollSpy();
-	};
+	// Loop through each section from our store
+	for (let i in sections) {
+		// If section is in the viewport
+		if (sections[i] <= scrollPosition) {
+			// Select all active section nav anchors
+			const activeLinks = document.querySelector('.active');
+			// If we have active section nav anchors
+			if (activeLinks) {
+				// Remove active class
+				activeLinks.setAttribute('class', ' ');
+			}
 
-	function scrollSpy() {
-		var scrollPosition =
-			document.documentElement.scrollTop || document.body.scrollTop;
-
-		for (i in sections) {
-			if (sections[i] <= scrollPosition) {
-				var activeLinks = document.querySelector('.active');
-				if (activeLinks) {
-					activeLinks.setAttribute('class', ' ');
-				}
-
-				var activeSection = document.querySelector('a[href*=' + i + ']');
-
-				if (activeSection) {
-					activeSection.setAttribute('class', 'active');
-				}
+			// Select all anchors with href of active section's id
+			const activeSection = document.querySelector('a[href*=' + i + ']');
+			// If we have anchors to make active
+			if (activeSection) {
+				// Add active class
+				activeSection.setAttribute('class', 'active');
 			}
 		}
 	}
-})();
+}
+
+function mapInit() {
+	// When the window has finished loading create our google map below
+	google.maps.event.addDomListener(window, 'load', init);
+
+	function init() {
+		// Set map options
+		const mapOptions = {
+			// How zoomed in you want the map to start at (always required)
+			zoom: 13.8,
+			// The latitude and longitude to center the map (always required)
+			center: new google.maps.LatLng(51.51244, -0.113916),
+			// Hide map controls
+			disableDefaultUI: true,
+			// Snazzy Maps styling
+			styles: [
+				{
+					featureType: 'all',
+					elementType: 'geometry.fill',
+					stylers: [{ lightness: '-100' }, { color: '#ffdac9' }]
+				},
+				{
+					featureType: 'poi',
+					elementType: 'geometry.fill',
+					stylers: [{ visibility: 'on' }, { color: '#ffcab1' }]
+				},
+				{
+					featureType: 'poi',
+					elementType: 'labels',
+					stylers: [{ visibility: 'off' }]
+				},
+				{
+					featureType: 'poi.park',
+					elementType: 'geometry.fill',
+					stylers: [{ color: '#ffcab1' }]
+				},
+				{
+					featureType: 'road',
+					elementType: 'geometry',
+					stylers: [{ lightness: 100 }, { visibility: 'simplified' }]
+				},
+				{
+					featureType: 'road',
+					elementType: 'labels',
+					stylers: [{ visibility: 'off' }]
+				},
+				{
+					featureType: 'transit.line',
+					elementType: 'geometry',
+					stylers: [{ visibility: 'on' }, { lightness: 700 }]
+				},
+				{
+					featureType: 'water',
+					elementType: 'all',
+					stylers: [{ color: '#92e1dd' }]
+				}
+			]
+		};
+
+		// Get the HTML DOM element that will contain your map
+		// We are using a div with id="map" seen below in the <body>
+		const mapElement = document.getElementById('map');
+
+		// Create the Google Map using our element and options defined above
+		const map = new google.maps.Map(mapElement, mapOptions);
+
+		// Add restaurant location marker to map
+		new google.maps.Marker({
+			position: new google.maps.LatLng(51.51244, -0.126916),
+			map: map,
+			icon: '/dist/assets/png/location.png'
+		});
+	}
+}
