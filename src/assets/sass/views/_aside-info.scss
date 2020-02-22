@@ -1,0 +1,28 @@
+.aside-info {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	position: absolute;
+	top: 0;
+	left: 0;
+	pointer-events: none;
+
+	a {
+		margin-right: -25px;
+		padding: 6px 15px 2px;
+		background: #ffffff;
+		font-size: 18px;
+		font-weight: bold;
+		font-family: $font-headings;
+		letter-spacing: 0.18px;
+		color: #333333;
+		position: relative;
+		z-index: 100;
+		pointer-events: all;
+		transform: rotate(270deg);
+		text-transform: uppercase;
+		text-decoration: none;
+	}
+}
