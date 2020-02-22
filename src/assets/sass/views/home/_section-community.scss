@@ -1,0 +1,136 @@
+.section-community {
+	padding: 78.9px 0 104.1px;
+	background: #fefefe;
+
+	.container {
+		width: 1075px;
+		margin: 0 auto;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: flex-end;
+		justify-content: space-between;
+
+		article {
+			width: 250px;
+			min-height: 250px;
+			margin-bottom: 25px;
+			flex-grow: 0;
+			flex-shrink: 0;
+			background: grey;
+
+			&.intro {
+				padding: 0 9px 87px;
+				position: relative;
+
+				&:before {
+					width: 266px;
+					height: 6px;
+					background: #ffdac9;
+					content: '';
+					position: absolute;
+					top: 68px;
+					left: -8px;
+				}
+
+				h2 {
+					margin: 5px 0 0;
+					font-size: 62px;
+					font-weight: bold;
+					font-family: $font-headings;
+					line-height: 52px;
+					letter-spacing: 0;
+					color: #333333;
+					position: relative;
+				}
+
+				a {
+					padding: 8.49px 10.4px 3.51px 9.6px;
+					font-size: 18px;
+					font-weight: bold;
+					font-family: $font-headings;
+					line-height: 52px;
+					letter-spacing: 0.18px;
+					color: #333333;
+					background: #ffdac9;
+					text-decoration: none;
+				}
+
+				p {
+					margin-bottom: 0;
+					font-size: 22px;
+					font-weight: bold;
+					font-family: $font-headings;
+					line-height: 25px;
+					letter-spacing: 0.44px;
+					color: #333333;
+				}
+			}
+
+			&.image {
+				padding: 15px 13px 14px 15px;
+				background: #ffffff;
+				box-shadow: 0px 15px 50px #0000000f;
+				position: relative;
+
+				.icon-photo {
+					width: 60px;
+					height: 60px;
+					position: absolute;
+					top: 0;
+					right: 0;
+				}
+			}
+
+			&.post {
+				padding: 39px 30px 13.8px;
+				background: #ffffff;
+				box-shadow: 0px 15px 50px #0000000f;
+
+				h4 {
+					margin-bottom: 16px;
+					text-align: left;
+					font: Bold 22px/52px DIN Condensed;
+					letter-spacing: 0.44px;
+					color: #333333;
+				}
+
+				p {
+					margin-bottom: 22px;
+					text-align: left;
+					font: Regular 15px/20px Gill Sans;
+					letter-spacing: 0.15px;
+					color: #333333;
+					opacity: 1;
+				}
+
+				ul.list-meta {
+					margin: 0;
+					padding: 0;
+					list-style: none;
+					display: flex;
+					align-items: center;
+					justify-content: flex-end;
+
+					li.item-meta {
+						margin: 0;
+						padding: 0;
+
+						.icon-heart,
+						.icon-comment {
+							margin-right: 5px;
+						}
+
+						.icon-heart {
+							width: 12px;
+							height: 13px;
+						}
+						.icon-comment {
+							width: 13px;
+							height: 12px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
