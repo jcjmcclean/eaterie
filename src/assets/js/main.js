@@ -65,9 +65,9 @@ function mapInit() {
 		// Set map options
 		const mapOptions = {
 			// How zoomed in you want the map to start at (always required)
-			zoom: 13.8,
+			zoom: 13.6,
 			// The latitude and longitude to center the map (always required)
-			center: new google.maps.LatLng(51.51244, -0.113916),
+			center: new google.maps.LatLng(51.51014, -0.116916),
 			// Hide map controls
 			disableDefaultUI: true,
 			// Snazzy Maps styling

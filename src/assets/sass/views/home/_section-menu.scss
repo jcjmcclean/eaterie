@@ -6,7 +6,7 @@
 		width: 1075px;
 		margin: 0 auto;
 		// padding: 75px 0 175px; // TODO - reinstate
-		padding: 75px 0 75px;
+		padding: 85px 0 75px;
 		position: relative;
 
 		.rules {
@@ -37,12 +37,13 @@
 			align-items: center;
 
 			h2 {
-				margin: 0;
+				margin: 0 0 10px 0;
 				display: inline-block;
 				font-weight: bold;
 				font-family: $font-headings;
 				line-height: 52px;
-				letter-spacing: 0;
+				letter-spacing: -2px;
+				text-transform: uppercase;
 				position: relative;
 
 				span.text {
