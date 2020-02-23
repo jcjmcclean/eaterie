@@ -1,6 +1,5 @@
 .section-community {
-	// padding: 97px 0 505px;  // TODO - reenable
-	padding: 97px 0 105px;
+	padding: 97px 0 505px;
 	background: #fefefe;
 
 	.container {
@@ -20,7 +19,7 @@
 			position: relative;
 
 			&:not(.intro) {
-				// top: 400px; // TODO - reenable
+				top: 400px;
 			}
 
 			&.intro {

@@ -6,9 +6,9 @@
 	// Initialise google map
 	mapInit();
 	// Run parallax code for community section
-	// communityAnim(); // TODO - reenable
+	communityAnim();
 	// Run parallax code for menu section
-	// menuAnim(); // TODO - reenable
+	menuAnim();
 
 	// On scroll event
 	window.onscroll = function() {
