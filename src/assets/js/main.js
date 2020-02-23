@@ -136,42 +136,42 @@ function communityAnim() {
 	// Initialise scrollmagic controller
 	const controller = new ScrollMagic.Controller();
 
-	// Create animation timeline
-	const tweenx = new TimelineMax().add([
+	// Create container animation timeline
+	const tweenContainer = new TimelineMax().add([
 		TweenMax.to('.section-community .container', 1, {
 			y: 400
 		})
 	]);
 
-	// Build scrollmagic scene
+	// Build scrollmagic container scene
 	new ScrollMagic.Scene({
 		triggerElement: '.section-community',
 		offset: window.innerHeight / 2,
 		duration: window.innerHeight
 	})
-		.setTween(tweenx)
+		.setTween(tweenContainer)
 		.addIndicators({ name: 'container' }) // TODO - remove
 		.addTo(controller);
 
-	// Create animation timeline
-	const tween = new TimelineMax().add([
+	// Create row 1 animation timeline
+	const tweenRow1 = new TimelineMax().add([
 		TweenMax.to('.section-community article:not(.intro):nth-child(-n+4)', 1, {
 			y: -400
 		})
 	]);
 
-	// Build scrollmagic scene
+	// Build scrollmagic row 1 scene
 	new ScrollMagic.Scene({
 		triggerElement: '.section-community',
 		offset: window.innerHeight / 2 - 250,
 		duration: 800
 	})
-		.setTween(tween)
+		.setTween(tweenRow1)
 		.addIndicators() // TODOO - remove
 		.addTo(controller);
 
-	// Create animation timeline
-	const tween2 = new TimelineMax().add([
+	// Create row 2 animation timeline
+	const tweenRow2 = new TimelineMax().add([
 		TweenMax.to(
 			'.section-community article:not(.intro):nth-child(-n+8):nth-last-child(-n+8)',
 			1,
@@ -181,30 +181,30 @@ function communityAnim() {
 		)
 	]);
 
-	// Build scrollmagic scene
+	// Build scrollmagic row 2 scene
 	new ScrollMagic.Scene({
 		triggerElement: '.section-community',
 		offset: window.innerHeight / 2 - 125,
 		duration: 800
 	})
-		.setTween(tween2)
+		.setTween(tweenRow2)
 		.addIndicators() // TODOO - remove
 		.addTo(controller);
 
-	// Create animation timeline
-	const tween3 = new TimelineMax().add([
+	// Create row 3 animation timeline
+	const tweenRow3 = new TimelineMax().add([
 		TweenMax.to('.section-community article:not(.intro):nth-child(-n+12)', 1, {
 			y: -400
 		})
 	]);
 
-	// Build scrollmagic scene
+	// Build scrollmagic row 3 scene
 	new ScrollMagic.Scene({
 		triggerElement: '.section-community',
 		offset: window.innerHeight / 2,
 		duration: 800
 	})
-		.setTween(tween3)
+		.setTween(tweenRow3)
 		.addIndicators() // TODOO - remove
 		.addTo(controller);
 }
@@ -214,8 +214,25 @@ function menuAnim() {
 	// Initialise scrollmagic controller
 	const controller = new ScrollMagic.Controller();
 
-	// Create animation timeline
-	const tween = new TimelineMax().add([
+	// Create container animation timeline
+	const tweenContainer = new TimelineMax().add([
+		TweenMax.to('.section-menu .container', 1, {
+			y: 200
+		})
+	]);
+
+	// Build scrollmagic container scene
+	new ScrollMagic.Scene({
+		triggerElement: '.section-menu',
+		offset: 400,
+		duration: 600
+	})
+		.setTween(tweenContainer)
+		.addIndicators({ name: 'container' }) // TODO - remove
+		.addTo(controller);
+
+	// Create entry animation timeline
+	const tweenEntry = new TimelineMax().add([
 		// Define up scrolling article animations
 		TweenMax.to('.section-menu .up', 1, {
 			y: -window.innerHeight * 0.75
@@ -225,18 +242,18 @@ function menuAnim() {
 		})
 	]);
 
-	// Build scrollmagic scene
+	// Build scrollmagic entry scene
 	new ScrollMagic.Scene({
 		triggerElement: '.section-menu',
-		offset: -0,
-		duration: window.innerHeight / 2
+		offset: 0,
+		duration: 400
 	})
-		.setTween(tween)
+		.setTween(tweenEntry)
 		.addIndicators() // TODOO - remove
 		.addTo(controller);
 
-	// Create animation timeline
-	const tween2 = new TimelineMax().add([
+	// Create exit animation timeline
+	const tweenExit = new TimelineMax().add([
 		// Define up scrolling article animations
 		TweenMax.to('.section-menu .up', 1, {
 			y: window.innerHeight * 0.75
@@ -246,13 +263,13 @@ function menuAnim() {
 		})
 	]);
 
-	// Build scrollmagic scene
+	// Build scrollmagic exit scene
 	new ScrollMagic.Scene({
 		triggerElement: '.section-menu',
-		offset: window.innerHeight,
-		duration: window.innerHeight / 2
+		offset: 500,
+		duration: 800
 	})
-		.setTween(tween2)
+		.setTween(tweenExit)
 		.addIndicators() // TODOO - remove
 		.addTo(controller);
 }
