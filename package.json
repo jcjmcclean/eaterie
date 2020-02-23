@@ -1,5 +1,5 @@
 {
-	"name": "checkfer",
+	"name": "eaterie",
 	"version": "1.0.0",
 	"scripts": {
 		"start": "gulp clean && gulp --development",
