@@ -1,10 +1,14 @@
 (function() {
-	'use strict';
+	('use strict');
 
 	// Call scrollSpy on load to set section nav active
 	scrollSpy();
 	// Initialise google map
 	mapInit();
+	// Run parallax code for community section
+	communityAnim();
+	// Run parallax code for menu section
+	menuAnim();
 
 	// On scroll event
 	window.onscroll = function() {
@@ -125,4 +129,113 @@ function mapInit() {
 			icon: '/dist/assets/png/location.png'
 		});
 	}
+}
+
+/** Scrollmagic/gsap animation for community section */
+function communityAnim() {
+	// Initialise scrollmagic controller
+	const controller = new ScrollMagic.Controller();
+
+	// Create animation timeline
+	const tween = new TimelineMax().add([
+		TweenMax.to('.section-community article:not(.intro):nth-child(-n+4)', 1, {
+			y: -400
+		})
+	]);
+
+	// Build scrollmagic scene
+	new ScrollMagic.Scene({
+		triggerElement: '.section-community',
+		offset: window.innerHeight / 2 - 250,
+		duration: window.innerHeight / 4
+	})
+		.setTween(tween)
+		.addIndicators() // TODOO - remove
+		.addTo(controller);
+
+	// Create animation timeline
+	const tween2 = new TimelineMax().add([
+		TweenMax.to(
+			'.section-community article:not(.intro):nth-child(-n+8):nth-last-child(-n+8)',
+			1,
+			{
+				y: -400
+			}
+		)
+	]);
+
+	// Build scrollmagic scene
+	new ScrollMagic.Scene({
+		triggerElement: '.section-community',
+		offset: window.innerHeight / 2 - 125,
+		duration: window.innerHeight / 4
+	})
+		.setTween(tween2)
+		.addIndicators() // TODOO - remove
+		.addTo(controller);
+
+	// Create animation timeline
+	const tween3 = new TimelineMax().add([
+		TweenMax.to('.section-community article:not(.intro):nth-child(-n+12)', 1, {
+			y: -400
+		})
+	]);
+
+	// Build scrollmagic scene
+	new ScrollMagic.Scene({
+		triggerElement: '.section-community',
+		offset: window.innerHeight / 2,
+		duration: window.innerHeight / 4
+	})
+		.setTween(tween3)
+		.addIndicators() // TODOO - remove
+		.addTo(controller);
+}
+
+/** Scrollmagic/gsap animation for menu section */
+function menuAnim() {
+	// Initialise scrollmagic controller
+	const controller = new ScrollMagic.Controller();
+
+	// Create animation timeline
+	const tween = new TimelineMax().add([
+		// Define up scrolling article animations
+		TweenMax.to('.section-menu .up', 1, {
+			y: -window.innerHeight * 0.75
+		}),
+		TweenMax.to('.section-menu .down', 1, {
+			y: window.innerHeight
+		})
+	]);
+
+	// Build scrollmagic scene
+	new ScrollMagic.Scene({
+		triggerElement: '.section-menu',
+		offset: -0,
+		duration: window.innerHeight / 2
+	})
+		.setTween(tween)
+		.addIndicators() // TODOO - remove
+		.addTo(controller);
+
+	// Create animation timeline
+	const tween2 = new TimelineMax().add([
+		// Define up scrolling article animations
+		TweenMax.to('.section-menu .up', 1, {
+			y: window.innerHeight * 0.75
+		}),
+		TweenMax.to('.section-menu .down', 1, {
+			y: -window.innerHeight
+		})
+	]);
+
+	// Build scrollmagic scene
+	new ScrollMagic.Scene({
+		triggerElement: '.section-menu',
+		offset: window.innerHeight * 0.75,
+		duration: window.innerHeight / 2
+	})
+		.setTween(tween2)
+		.addIndicators() // TODOO - remove
+		.addTo(controller);
 }

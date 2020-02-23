@@ -1,5 +1,6 @@
 .section-menu {
 	background: #f8f8f8;
+	overflow: hidden;
 
 	.container {
 		width: 1075px;
@@ -74,8 +75,15 @@
 
 			article {
 				width: 268.75px;
-				padding: 0 35px;
-				overflow-x: hidden;
+				position: relative;
+
+				&.up {
+					top: 75vh;
+				}
+
+				&.down {
+					top: -100vh;
+				}
 
 				&:nth-child(1) h2 {
 					margin-left: -19px;
@@ -105,47 +113,52 @@
 					}
 				}
 
-				h2 {
-					margin-top: 8px;
-					margin-bottom: 40px;
-					line-height: 52px;
-					letter-spacing: 0;
-					text-transform: uppercase;
-				}
+				.detail {
+					padding: 0 35px;
+					overflow: hidden;
 
-				ul.list-dishes {
-					margin: 0;
-					padding: 0;
-					list-style: none;
+					h2 {
+						margin-top: 8px;
+						margin-bottom: 40px;
+						line-height: 52px;
+						letter-spacing: 0;
+						text-transform: uppercase;
+					}
 
-					li.item-dish {
-						margin: 0 0 45px 0;
+					ul.list-dishes {
+						margin: 0;
 						padding: 0;
+						list-style: none;
 
-						&:last-child {
-							margin-bottom: 0;
-						}
+						li.item-dish {
+							margin: 0 0 45px 0;
+							padding: 0;
 
-						h5 {
-							margin-bottom: 9px;
-							font-size: $font-size-small;
-							letter-spacing: 0.14px;
-						}
+							&:last-child {
+								margin-bottom: 0;
+							}
 
-						p {
-							margin-bottom: 12px;
-							line-height: 20px;
-							letter-spacing: 0.15px;
-							color: #767676;
-						}
+							h5 {
+								margin-bottom: 9px;
+								font-size: $font-size-small;
+								letter-spacing: 0.14px;
+							}
 
-						.price {
-							padding: 7px 10px 1px;
-							border: 2px solid $color-primary;
-							line-height: 1;
-							display: inline-block;
-							font-family: $font-headings;
-							font-weight: bold;
+							p {
+								margin-bottom: 12px;
+								line-height: 20px;
+								letter-spacing: 0.15px;
+								color: #767676;
+							}
+
+							.price {
+								padding: 7px 10px 1px;
+								border: 2px solid $color-primary;
+								line-height: 1;
+								display: inline-block;
+								font-family: $font-headings;
+								font-weight: bold;
+							}
 						}
 					}
 				}
