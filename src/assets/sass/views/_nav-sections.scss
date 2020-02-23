@@ -29,7 +29,7 @@
 				width: 15px;
 				height: 2px;
 				display: block;
-				background: #333333;
+				background: $color-text;
 				text-decoration: none;
 				position: relative;
 
@@ -48,7 +48,7 @@
 					font-weight: bold;
 					font-family: $font-headings;
 					letter-spacing: 0.18px;
-					color: #333333;
+					color: $color-text;
 					position: absolute;
 					top: -6px;
 					left: 0;

@@ -6,7 +6,7 @@
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
-	background: #ffdac9 url('/dist/assets/images/hero.jpg');
+	background: $color-primary url('/dist/assets/images/hero.jpg');
 	background-position: top center;
 	background-size: contain;
 	background-repeat: no-repeat;

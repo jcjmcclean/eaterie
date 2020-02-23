@@ -28,7 +28,7 @@
 				&:before {
 					width: 266px;
 					height: 6px;
-					background: #ffdac9;
+					background: $color-primary;
 					content: '';
 					position: absolute;
 					top: 54px;
@@ -52,7 +52,7 @@
 					line-height: 52px;
 					letter-spacing: 0.18px;
 					color: $color-text;
-					background: #ffdac9;
+					background: $color-primary;
 					text-decoration: none;
 				}
 

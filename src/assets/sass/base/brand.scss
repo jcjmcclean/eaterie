@@ -1,12 +1,5 @@
 /* COLOURS */
-$color-black: #000000;
-$color-white: #ffffff;
-
-$color-body: $color-white;
-
 $color-text: #333333;
-
-$color-headings: $color-text;
 
 $color-primary: #ffdac9;
 
@@ -31,4 +24,4 @@ $font-size-h6: $font-size-standard;
 
 $headings-font: $font-headings;
 $headings-font-weight: bold;
-$headings-color: $color-headings;
+$headings-color: $color-text;
