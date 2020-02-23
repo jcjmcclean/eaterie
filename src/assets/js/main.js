@@ -150,7 +150,6 @@ function communityAnim() {
 		duration: window.innerHeight
 	})
 		.setTween(tweenContainer)
-		.addIndicators({ name: 'container' }) // TODO - remove
 		.addTo(controller);
 
 	// Create row 1 animation timeline
@@ -167,7 +166,6 @@ function communityAnim() {
 		duration: 800
 	})
 		.setTween(tweenRow1)
-		.addIndicators() // TODOO - remove
 		.addTo(controller);
 
 	// Create row 2 animation timeline
@@ -188,7 +186,6 @@ function communityAnim() {
 		duration: 800
 	})
 		.setTween(tweenRow2)
-		.addIndicators() // TODOO - remove
 		.addTo(controller);
 
 	// Create row 3 animation timeline
@@ -205,7 +202,6 @@ function communityAnim() {
 		duration: 800
 	})
 		.setTween(tweenRow3)
-		.addIndicators() // TODOO - remove
 		.addTo(controller);
 }
 
@@ -228,7 +224,6 @@ function menuAnim() {
 		duration: 600
 	})
 		.setTween(tweenContainer)
-		.addIndicators({ name: 'container' }) // TODO - remove
 		.addTo(controller);
 
 	// Create entry animation timeline
@@ -249,7 +244,6 @@ function menuAnim() {
 		duration: 400
 	})
 		.setTween(tweenEntry)
-		.addIndicators() // TODOO - remove
 		.addTo(controller);
 
 	// Create exit animation timeline
@@ -270,6 +264,5 @@ function menuAnim() {
 		duration: 800
 	})
 		.setTween(tweenExit)
-		.addIndicators() // TODOO - remove
 		.addTo(controller);
 }
