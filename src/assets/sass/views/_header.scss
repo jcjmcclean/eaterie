@@ -11,11 +11,11 @@
 
 	.logo {
 		margin-right: 55px;
-		font-size: 28px;
+		font-size: 28 / $font-base * 1rem;
 		font-family: $font-headings;
 		font-weight: bold;
 		letter-spacing: 0;
-		color: #333333;
+		color: $color-text;
 		text-transform: uppercase;
 	}
 
@@ -40,10 +40,10 @@
 
 				a {
 					font-family: $font-headings;
-					font-size: 18px;
+					font-size: $font-size-med;
 					font-weight: bold;
 					letter-spacing: 0.18px;
-					color: #333333;
+					color: $color-text;
 					text-decoration: none;
 					text-transform: uppercase;
 				}

@@ -22,13 +22,13 @@
 			line-height: 95px;
 
 			&:first-child {
-				font-size: 82px;
+				font-size: 82 / $font-base * 1rem;
 			}
 			&:nth-child(2) {
-				font-size: 115px;
+				font-size: 115 / $font-base * 1rem;
 			}
 			&:nth-child(3) {
-				font-size: 35px;
+				font-size: 35 / $font-base * 1rem;
 				line-height: 52px;
 			}
 		}

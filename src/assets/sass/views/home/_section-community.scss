@@ -20,7 +20,7 @@
 			// TODO - floaty background images
 
 			&.intro {
-				padding: 0 9px 87px;
+				padding: 7px 0 30px;
 				position: relative;
 
 				&:before {
@@ -29,41 +29,39 @@
 					background: #ffdac9;
 					content: '';
 					position: absolute;
-					top: 68px;
+					top: 63px;
 					left: -8px;
 				}
 
 				h2 {
-					margin: 5px 0 0;
-					font-size: 62px;
+					margin: 0;
 					font-weight: bold;
 					font-family: $font-headings;
 					line-height: 52px;
 					letter-spacing: 0;
-					color: #333333;
 					position: relative;
 				}
 
-				a {
+				.btn-primary {
 					padding: 8.49px 10.4px 3.51px 9.6px;
-					font-size: 18px;
+					font-size: $font-size-med;
 					font-weight: bold;
 					font-family: $font-headings;
 					line-height: 52px;
 					letter-spacing: 0.18px;
-					color: #333333;
+					color: $color-text;
 					background: #ffdac9;
 					text-decoration: none;
 				}
 
 				p {
-					margin-bottom: 0;
-					font-size: 22px;
+					margin: 25px 0 0 0;
+					padding-right: 25px;
+					font-size: $font-size-large;
 					font-weight: bold;
 					font-family: $font-headings;
 					line-height: 25px;
 					letter-spacing: 0.44px;
-					color: #333333;
 				}
 			}
 
@@ -83,7 +81,7 @@
 			}
 
 			&.post {
-				padding: 39px 30px 13.8px 29px;
+				padding: 39px 26px 13.8px 26px;
 				display: flex;
 				justify-content: space-between;
 				flex-direction: column;
@@ -93,20 +91,17 @@
 				h4 {
 					margin-bottom: 16px;
 					text-align: left;
-					font-size: 22px;
+					font-size: $font-size-large;
 					font-weight: bold;
 					line-height: 1;
 					letter-spacing: 0.44px;
-					color: #333333;
 				}
 
 				p {
 					margin-bottom: 22px;
 					text-align: left;
-					font-size: 15px;
 					line-height: 20px;
 					letter-spacing: 0.15px;
-					color: #333333;
 					opacity: 1;
 				}
 
@@ -144,10 +139,8 @@
 			&.note {
 				min-height: auto;
 				align-self: center;
-				padding-right: 58px;
-				font-size: 15px;
+				padding-right: 45px;
 				letter-spacing: 0.15px;
-				color: #333333;
 			}
 		}
 	}

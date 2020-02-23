@@ -1,2 +1,34 @@
-$font-standard: 'Gill Sans';
-$font-headings: 'DIN Condensed';
+/* COLOURS */
+$color-black: #000000;
+$color-white: #ffffff;
+
+$color-body: $color-white;
+
+$color-text: #333333;
+
+$color-headings: $color-text;
+
+$color-primary: #ffdac9;
+
+/* FONTS */
+$font-standard: 'Gill Sans', Arial, Helvetica, Sans-serif;
+$font-headings: 'DIN Condensed', Arial, Helvetica, Sans-serif;
+
+$font-base: 15;
+
+$font-size-base: $font-base * 1px;
+$font-size-standard: 15 / $font-base * 1rem;
+$font-size-small: 14 / $font-base * 1rem;
+$font-size-med: 18 / $font-base * 1rem;
+$font-size-large: 22 / $font-base * 1rem;
+
+$font-size-h1: 62 / $font-base * 1rem;
+$font-size-h2: $font-size-h1;
+$font-size-h3: 22 / $font-base * 1rem;
+$font-size-h4: $font-size-large;
+$font-size-h5: $font-size-med;
+$font-size-h6: $font-size-standard;
+
+$headings-font: $font-headings;
+$headings-font-weight: bold;
+$headings-color: $color-headings;

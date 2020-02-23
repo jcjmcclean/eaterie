@@ -13,11 +13,11 @@
 		margin-right: -25px;
 		padding: 6px 15px 2px;
 		background: #ffffff;
-		font-size: 18px;
+		font-size: $font-size-med;
 		font-weight: bold;
 		font-family: $font-headings;
 		letter-spacing: 0.18px;
-		color: #333333;
+		color: $color-text;
 		position: relative;
 		z-index: 100;
 		pointer-events: all;
