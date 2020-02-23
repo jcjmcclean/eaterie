@@ -5,7 +5,8 @@
 	.container {
 		width: 1075px;
 		margin: 0 auto;
-		padding: 75px 0 175px;
+		// padding: 75px 0 175px; // TODO - reinstate
+		padding: 75px 0 75px;
 		position: relative;
 
 		.rules {
@@ -81,11 +82,11 @@
 				position: relative;
 
 				&.up {
-					top: 75vh;
+					// top: 75vh; // TODO - reenable
 				}
 
 				&.down {
-					top: -100vh;
+					// top: -100vh; // TODO - reenable
 				}
 
 				&:nth-child(1) h2 {
