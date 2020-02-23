@@ -5,18 +5,17 @@
 	align-items: center;
 	justify-content: flex-end;
 	position: absolute;
-	top: 0;
+	top: 10px;
 	left: 0;
 	pointer-events: none;
 
 	a {
-		margin-right: -25px;
-		padding: 6px 15px 2px;
+		margin-right: -21px;
+		padding: 6px 7px 2px;
 		background: #ffffff;
 		font-size: $font-size-med;
 		font-weight: bold;
 		font-family: $font-headings;
-		letter-spacing: 0.18px;
 		color: $color-text;
 		position: relative;
 		z-index: 100;

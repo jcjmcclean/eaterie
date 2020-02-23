@@ -30,7 +30,7 @@
 		}
 
 		.intro {
-			margin-bottom: 15px;
+			margin-bottom: 10px;
 			text-align: center;
 			display: flex;
 			flex-direction: column;
@@ -103,7 +103,7 @@
 				}
 
 				&:nth-child(3) {
-					padding-top: 80px;
+					padding-top: 90px;
 
 					h2 {
 						margin-left: -44px;
@@ -111,10 +111,10 @@
 				}
 
 				&:nth-child(4) {
-					padding-top: 30px;
+					padding-top: 37px;
 
 					h2 {
-						margin-left: -39px;
+						margin-left: -41px;
 					}
 				}
 
@@ -126,7 +126,7 @@
 						margin-top: 8px;
 						margin-bottom: 40px;
 						line-height: 52px;
-						letter-spacing: 0;
+						letter-spacing: -2px;
 						text-transform: uppercase;
 					}
 
@@ -136,7 +136,7 @@
 						list-style: none;
 
 						li.item-dish {
-							margin: 0 0 45px 0;
+							margin: 0 0 50px 0;
 							padding: 0;
 
 							&:last-child {
