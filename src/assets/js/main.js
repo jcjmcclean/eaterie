@@ -137,6 +137,23 @@ function communityAnim() {
 	const controller = new ScrollMagic.Controller();
 
 	// Create animation timeline
+	const tweenx = new TimelineMax().add([
+		TweenMax.to('.section-community .container', 1, {
+			y: 400
+		})
+	]);
+
+	// Build scrollmagic scene
+	new ScrollMagic.Scene({
+		triggerElement: '.section-community',
+		offset: window.innerHeight / 2,
+		duration: window.innerHeight
+	})
+		.setTween(tweenx)
+		.addIndicators({ name: 'container' }) // TODO - remove
+		.addTo(controller);
+
+	// Create animation timeline
 	const tween = new TimelineMax().add([
 		TweenMax.to('.section-community article:not(.intro):nth-child(-n+4)', 1, {
 			y: -400
@@ -147,7 +164,7 @@ function communityAnim() {
 	new ScrollMagic.Scene({
 		triggerElement: '.section-community',
 		offset: window.innerHeight / 2 - 250,
-		duration: window.innerHeight / 4
+		duration: 800
 	})
 		.setTween(tween)
 		.addIndicators() // TODOO - remove
@@ -168,7 +185,7 @@ function communityAnim() {
 	new ScrollMagic.Scene({
 		triggerElement: '.section-community',
 		offset: window.innerHeight / 2 - 125,
-		duration: window.innerHeight / 4
+		duration: 800
 	})
 		.setTween(tween2)
 		.addIndicators() // TODOO - remove
@@ -185,7 +202,7 @@ function communityAnim() {
 	new ScrollMagic.Scene({
 		triggerElement: '.section-community',
 		offset: window.innerHeight / 2,
-		duration: window.innerHeight / 4
+		duration: 800
 	})
 		.setTween(tween3)
 		.addIndicators() // TODOO - remove
@@ -232,7 +249,7 @@ function menuAnim() {
 	// Build scrollmagic scene
 	new ScrollMagic.Scene({
 		triggerElement: '.section-menu',
-		offset: window.innerHeight * 0.75,
+		offset: window.innerHeight,
 		duration: window.innerHeight / 2
 	})
 		.setTween(tween2)
