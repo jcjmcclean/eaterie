@@ -27,7 +27,7 @@ function scrollSpy() {
 	// Loop through each section
 	Array.prototype.forEach.call(section, function(e) {
 		// Add to store with section id and pixel offset from top
-		sections[e.id] = e.offsetTop;
+		sections[e.id] = e.offsetTop - 50;
 	});
 
 	// Get current scroll position

@@ -36,7 +36,6 @@
 			align-items: center;
 
 			h2 {
-				// TODO - proper styling
 				margin: 0;
 				display: inline-block;
 				font-weight: bold;
@@ -45,8 +44,12 @@
 				letter-spacing: 0;
 				position: relative;
 
+				span.text {
+					position: relative;
+					z-index: 1;
+				}
+
 				&:after {
-					// TODO - proper styling
 					width: calc(100%+36px);
 					height: 6px;
 					background: #ffdac9;
