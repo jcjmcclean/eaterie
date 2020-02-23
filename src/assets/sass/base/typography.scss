@@ -5,9 +5,40 @@ h4,
 h5,
 h6 {
 	margin: 0 0 20px 0;
-	font-family: $font-headings;
+	padding: 0;
+	font-family: $headings-font;
+	font-weight: $headings-font-weight;
+	color: $headings-color;
+}
+
+h1 {
+	font-size: $font-size-h1;
+}
+
+h2 {
+	font-size: $font-size-h2;
+}
+
+h3 {
+	font-size: $font-size-h3;
+}
+
+h4 {
+	font-size: $font-size-h4;
+}
+
+h5 {
+	font-size: $font-size-h5;
+}
+
+h6 {
+	font-size: $font-size-h6;
 }
 
 p {
-	margin: 0 0 20px 0;
+	margin: 0 0 20px;
+}
+
+::selection {
+	background: rgba($color-primary, 0.25);
 }

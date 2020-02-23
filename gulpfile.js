@@ -114,6 +114,8 @@ const copyAssets = cb => {
 		[
 			gulp.src('./src/assets/**/*.png'),
 			gulp.src('./src/assets/**/*.jpg'),
+			gulp.src('./src/assets/**/*.woff'),
+			gulp.src('./src/assets/**/*.woff2'),
 			gulp.dest('dist/assets/'),
 			bs.stream()
 		],
