@@ -3,8 +3,6 @@
 
 	// Call scrollSpy on load to set section nav active
 	scrollSpy();
-	// Initialise google map
-	mapInit();
 	// Run parallax code for community section
 	communityAnim();
 	// Run parallax code for menu section
@@ -54,88 +52,6 @@ function scrollSpy() {
 				activeSection.setAttribute('class', 'active');
 			}
 		}
-	}
-}
-
-function mapInit() {
-	// When the window has finished loading create our google map below
-	google.maps.event.addDomListener(window, 'load', init);
-
-	function init() {
-		// Set map options
-		const mapOptions = {
-			// How zoomed in you want the map to start at (always required)
-			zoom: 13.6,
-			// The latitude and longitude to center the map (always required)
-			center: new google.maps.LatLng(51.51014, -0.116916),
-			// Hide map controls
-			disableDefaultUI: true,
-			// Snazzy Maps styling
-			styles: [
-				{
-					featureType: 'all',
-					elementType: 'geometry.fill',
-					stylers: [{ lightness: '-100' }, { color: '#ffdac9' }]
-				},
-				{
-					featureType: 'poi',
-					elementType: 'geometry.fill',
-					stylers: [{ visibility: 'on' }, { color: '#ffcab1' }]
-				},
-				{
-					featureType: 'poi',
-					elementType: 'labels',
-					stylers: [{ visibility: 'off' }]
-				},
-				{
-					featureType: 'poi.park',
-					elementType: 'geometry.fill',
-					stylers: [{ color: '#ffcab1' }]
-				},
-				{
-					featureType: 'road',
-					elementType: 'geometry',
-					stylers: [{ lightness: 100 }, { visibility: 'simplified' }]
-				},
-				{
-					featureType: 'road',
-					elementType: 'labels',
-					stylers: [{ visibility: 'off' }]
-				},
-				{
-					featureType: 'transit.line',
-					elementType: 'geometry',
-					stylers: [{ visibility: 'on' }, { lightness: 700 }]
-				},
-				{
-					featureType: 'water',
-					elementType: 'all',
-					stylers: [{ color: '#92e1dd' }]
-				}
-			]
-		};
-
-		// Get the HTML DOM element that will contain your map
-		// We are using a div with id="map" seen below in the <body>
-		const mapElement = document.getElementById('map');
-
-		// Create the Google Map using our element and options defined above
-		const map = new google.maps.Map(mapElement, mapOptions);
-
-		// Create marker icon
-		const icon = {
-			url: '/static/images/location.png',
-			scaledSize: new google.maps.Size(42, 67),
-			origin: new google.maps.Point(0, 0),
-			anchor: new google.maps.Point(0, 0)
-		};
-
-		// Add restaurant location marker to map
-		new google.maps.Marker({
-			position: new google.maps.LatLng(51.51244, -0.126916),
-			map: map,
-			icon: icon
-		});
 	}
 }
 
@@ -273,4 +189,82 @@ function menuAnim() {
 	})
 		.setTween(tweenExit)
 		.addTo(controller);
+}
+
+/** Initialise google map */
+function mapInit() {
+	// Set map options
+	const mapOptions = {
+		// How zoomed in you want the map to start at (always required)
+		zoom: 13.6,
+		// The latitude and longitude to center the map (always required)
+		center: new google.maps.LatLng(51.51014, -0.116916),
+		// Hide map controls
+		disableDefaultUI: true,
+		// Snazzy Maps styling
+		styles: [
+			{
+				featureType: 'all',
+				elementType: 'geometry.fill',
+				stylers: [{ lightness: '-100' }, { color: '#ffdac9' }]
+			},
+			{
+				featureType: 'poi',
+				elementType: 'geometry.fill',
+				stylers: [{ visibility: 'on' }, { color: '#ffcab1' }]
+			},
+			{
+				featureType: 'poi',
+				elementType: 'labels',
+				stylers: [{ visibility: 'off' }]
+			},
+			{
+				featureType: 'poi.park',
+				elementType: 'geometry.fill',
+				stylers: [{ color: '#ffcab1' }]
+			},
+			{
+				featureType: 'road',
+				elementType: 'geometry',
+				stylers: [{ lightness: 100 }, { visibility: 'simplified' }]
+			},
+			{
+				featureType: 'road',
+				elementType: 'labels',
+				stylers: [{ visibility: 'off' }]
+			},
+			{
+				featureType: 'transit.line',
+				elementType: 'geometry',
+				stylers: [{ visibility: 'on' }, { lightness: 700 }]
+			},
+			{
+				featureType: 'water',
+				elementType: 'all',
+				stylers: [{ color: '#92e1dd' }]
+			}
+		]
+	};
+
+	// Get the HTML DOM element that will contain your map
+	// We are using a div with id="map" seen below in the <body>
+	const mapElement = document.getElementById('map');
+
+	// Create the Google Map using our element and options defined above
+	const map = new google.maps.Map(mapElement, mapOptions);
+
+	// Create marker icon
+	const icon = {
+		url: '/static/images/location.png',
+		scaledSize: new google.maps.Size(42, 67),
+		origin: new google.maps.Point(0, 0),
+		anchor: new google.maps.Point(0, 0)
+	};
+
+	// Add restaurant location marker to map
+	new google.maps.Marker({
+		position: new google.maps.LatLng(51.51244, -0.126916),
+		map: map,
+		icon: icon
+	});
 }

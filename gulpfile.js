@@ -58,9 +58,17 @@ const compileCss = cb => {
 
 // Concatenate and minify JS
 const compileJs = cb => {
+	// Scripts to build
+	const scripts = [
+		'node_modules/gsap/dist/gsap.min.js',
+		'node_modules/scrollmagic/scrollmagic/minified/ScrollMagic.min.js',
+		'node_modules/scrollmagic/scrollmagic/minified/plugins/animation.gsap.min.js',
+		'src/**/*.js'
+	];
+
 	return pump(
 		[
-			gulp.src('src/**/*.js'),
+			gulp.src(scripts),
 			sourcemaps.init(),
 			concat('app.min.js'),
 			gulpIf(devMode, sourcemaps.write('.')),
