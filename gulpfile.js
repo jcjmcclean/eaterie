@@ -123,6 +123,11 @@ const copyAssets = cb => {
 	);
 };
 
+// Copy markup to dist
+const copyMarkup = cb => {
+	pump([gulp.src('./src/*.html'), gulp.dest('dist/'), bs.stream()], cb);
+};
+
 // Clean up dist files
 const clean = cb => {
 	// Delete the dist directory
@@ -138,6 +143,7 @@ const defaultTask = cb => {
 	compileJs(cb);
 	createSprite(cb);
 	copyAssets(cb);
+	copyMarkup(cb);
 
 	if (devMode) {
 		// Call browserSync task

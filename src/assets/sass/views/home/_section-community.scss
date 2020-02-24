@@ -40,7 +40,6 @@
 					font-weight: bold;
 					font-family: $font-headings;
 					line-height: 52px;
-					letter-spacing: -2px;
 					position: relative;
 				}
 
@@ -58,7 +57,7 @@
 
 				p {
 					margin: 25px 0 0 0;
-					padding-right: 25px;
+					padding-right: 40px;
 					font-size: $font-size-large;
 					font-weight: bold;
 					font-family: $font-headings;
@@ -82,7 +81,7 @@
 			}
 
 			&.post .inner {
-				padding: 25px 25px 16px;
+				padding: 35px 25px 16px;
 				display: flex;
 				justify-content: space-between;
 				flex-direction: column;
