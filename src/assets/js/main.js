@@ -122,11 +122,19 @@ function mapInit() {
 		// Create the Google Map using our element and options defined above
 		const map = new google.maps.Map(mapElement, mapOptions);
 
+		// Create marker icon
+		const icon = {
+			url: '/assets/png/location.png',
+			scaledSize: new google.maps.Size(42, 67),
+			origin: new google.maps.Point(0, 0),
+			anchor: new google.maps.Point(0, 0)
+		};
+
 		// Add restaurant location marker to map
 		new google.maps.Marker({
 			position: new google.maps.LatLng(51.51244, -0.126916),
 			map: map,
-			icon: '/assets/png/location.png'
+			icon: icon
 		});
 	}
 }
