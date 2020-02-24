@@ -124,8 +124,8 @@ const copyMarkup = cb => {
 				prefix: '@@',
 				basepath: '@file'
 			}),
-			gulp.dest('dist/'),
-			bs.stream()
+			gulp.dest('./dist'),
+			gulpIf(devMode, bs.stream())
 		],
 		cb
 	);
@@ -155,7 +155,7 @@ const defaultTask = cb => {
 		// Define files to watch and tasks to run on change
 		gulp.watch('src/**/*.scss', compileCss);
 		gulp.watch('src/**/*.js', compileJs);
-		gulp.watch(['src/**/*.html']).on('change', bs.reload);
+		gulp.watch(['src/**/*.html']).on('change', copyMarkup);
 		gulp.watch(['src/assets/svgs/*.svg']).on('change', createSprite);
 	}
 
