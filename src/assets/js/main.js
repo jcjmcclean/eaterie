@@ -124,7 +124,7 @@ function mapInit() {
 
 		// Create marker icon
 		const icon = {
-			url: '/assets/png/location.png',
+			url: '/static/images/location.png',
 			scaledSize: new google.maps.Size(42, 67),
 			origin: new google.maps.Point(0, 0),
 			anchor: new google.maps.Point(0, 0)

@@ -28,8 +28,7 @@ const browserSync = () => {
 
 		files: ['./src'],
 		server: {
-			directory: true,
-			index: './src/index.html'
+			index: './dist/index.html'
 		},
 		port: 8080,
 		ui: {
@@ -59,16 +58,9 @@ const compileCss = cb => {
 
 // Concatenate and minify JS
 const compileJs = cb => {
-	// Scripts to build
-	const scripts = [
-		'node_modules/jquery/dist/jquery.min.js',
-		'src/assets/js/*.js',
-		'src/**/*.js'
-	];
-
 	return pump(
 		[
-			gulp.src(scripts),
+			gulp.src('src/**/*.js'),
 			sourcemaps.init(),
 			concat('app.min.js'),
 			gulpIf(devMode, sourcemaps.write('.')),
@@ -101,6 +93,7 @@ const createSprite = cb => {
 			}),
 			svgstore(),
 			rename('icons.svg'),
+			gulp.dest('static/'),
 			gulp.dest('dist/assets/'),
 			bs.stream()
 		],
@@ -110,17 +103,7 @@ const createSprite = cb => {
 
 // Copy assets to dist
 const copyAssets = cb => {
-	pump(
-		[
-			gulp.src('./src/assets/**/*.png'),
-			gulp.src('./src/assets/**/*.jpg'),
-			gulp.src('./src/assets/**/*.woff'),
-			gulp.src('./src/assets/**/*.woff2'),
-			gulp.dest('dist/assets/'),
-			bs.stream()
-		],
-		cb
-	);
+	pump([gulp.src('./static/**/*'), gulp.dest('dist/static/'), bs.stream()], cb);
 };
 
 // Copy markup to dist
