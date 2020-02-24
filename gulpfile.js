@@ -2,6 +2,7 @@
 const bs = require('browser-sync').create(),
 	concat = require('gulp-concat'),
 	del = require('del'),
+	fileinclude = require('gulp-file-include'),
 	gulp = require('gulp'),
 	gulpIf = require('gulp-if'),
 	postcss = require('gulp-postcss'),
@@ -116,7 +117,18 @@ const copyAssets = cb => {
 
 // Copy markup to dist
 const copyMarkup = cb => {
-	pump([gulp.src('./src/*.html'), gulp.dest('dist/'), bs.stream()], cb);
+	pump(
+		[
+			gulp.src('./src/index.html'),
+			fileinclude({
+				prefix: '@@',
+				basepath: '@file'
+			}),
+			gulp.dest('dist/'),
+			bs.stream()
+		],
+		cb
+	);
 };
 
 // Clean up dist files
