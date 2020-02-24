@@ -126,7 +126,7 @@ function mapInit() {
 		new google.maps.Marker({
 			position: new google.maps.LatLng(51.51244, -0.126916),
 			map: map,
-			icon: '/dist/assets/png/location.png'
+			icon: '/assets/png/location.png'
 		});
 	}
 }
